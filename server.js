@@ -3,10 +3,10 @@ require('dotenv').config()
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
-var message = process.env.MESSAGE || "MISSING METHOD ENV"
+var message = process.env.MESSAGE || "MISSING MESSAGE ENV"
 
 app.use(function(req, res) {
-  res.send(message);
+  res.send(`${message} and is on ${port}`);
 });
 
 app.listen(port, function() {
